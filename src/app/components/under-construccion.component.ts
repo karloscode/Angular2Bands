@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'bands',  
+  selector: 'underconstruccion',  
   template: `
              <article> 
                 <h1>We&rsquo;ll be back soon!</h1>

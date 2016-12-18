@@ -12,7 +12,7 @@ const appRoutes: Routes = [
 	},
 	{ path: 'foo', component: UnderConstruccionComponent},
 	{ path: 'bar', component: UnderConstruccionComponent},
-	{ path: ':nombre', component: BandsComponent},
+	{ path: ':url', component: BandsComponent},
 ];
 
 export const appRoutingProviders: any[] = [];
