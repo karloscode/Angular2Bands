@@ -8,10 +8,25 @@ const appRoutes: Routes = [
 	{
 		path: '',
 		redirectTo: '/',
-		pathMatch: 'full'
+		pathMatch: 'full' ,  data: {
+      metadata: {
+        title: 'Angular Rocks',
+        description: 'Esto es la descripción por defecto',
+        keywords: 'angular rocks default'
+      }}
 	},
-	{ path: 'foo', component: UnderConstruccionComponent},
-	{ path: 'bar', component: UnderConstruccionComponent},
+	{ path: 'foo', component: UnderConstruccionComponent ,  data: {
+      metadata: {
+        title: 'Angular Rocks',
+        description: 'Esto es la descripción por defecto',
+        keywords: 'angular rocks default'
+      }}},
+	{ path: 'bar', component: UnderConstruccionComponent ,  data: {
+      metadata: {
+        title: 'Angular Rocks',
+        description: 'Esto es la descripción por defecto',
+        keywords: 'angular rocks default'
+      }}},
 	{ path: ':url', component: BandsComponent},
 ];
 

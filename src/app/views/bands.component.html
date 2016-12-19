@@ -1,0 +1,65 @@
+
+  
+
+ 	<div class="container">
+ 		<div class="main row">
+ 			<article class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+
+
+        <div *ngIf="band">
+      <h2>{{band[0].name}}</h2>
+      <span>{{band[0].text}}</span>
+      <img src={{band[0].urlImg}}/>
+
+
+    </div>
+    
+    <youtube-player
+        [videoId]="id"
+       (ready)="savePlayer($event)"
+         (change)="onStateChange($event)">
+        </youtube-player>
+ <div>
+				
+<article>
+        <p>
+ 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+ 					t in culpa qui officia deserunt mollit anim id est laborum.
+ 				</p>
+ 			</article>
+ 		
+ 			<aside class="col-xs-12 col-sm-4 col-md-4 col-lg-4 bg-primary">
+ 					<h3>Tecnologias</h3>
+ 					<h4>Javascript</h4>
+
+    
+ 			</aside>
+ 		</div>
+    <h3>Projects</h3>
+  	<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="http://www.jokedewinter.co.uk/republic/wp-content/media/2015/12/048-coming-soon.png" alt="...">
+      <div class="caption">
+        <h4>Geo Project</h4>
+        <p>Bootstrap web app</p>
+        <p>
+          <a href="#" class="btn btn-primary" role="button">Go</a>
+        </p>
+      </div>
+    </div>
+  </div>
+      
+  
+  </div>
+       		
+      
+ 	<footer>
+ 		<div class="container bg-primary">
+ 			<h3>Pie de pagina - Footer</h3>
+ 			<h4>12 Columnas</h4>
+ 		</div>
+ 	</footer>
+ 

@@ -1,28 +1,13 @@
 import { Component , Input } from '@angular/core';
 import { Band } from '../models/band';
 import { BandsService } from '../services/bands.service';
-
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MetadataService } from 'ng2-metadata';
 
 
 @Component({
 	selector: 'bands',	
-	template: `
-		<div *ngIf="band">
-			<h2>{{band[0].name}}</h2>
-			<span>{{band[0].text}}</span>
-			<img src={{band[0].urlImg}}/>
-
-
-		</div>
-		
-		{{nombre}}
-		<youtube-player
-    	  [videoId]="id"
-     	 (ready)="savePlayer($event)"
-      	 (change)="onStateChange($event)">
-      	</youtube-player>
-	`,
+	templateUrl: '../views/bands.component.html',
   providers: [BandsService] 
 })
 
@@ -35,7 +20,8 @@ export class BandsComponent {
   	constructor(
 		private route: ActivatedRoute,
 		private router: Router,
-		private bandsService: BandsService
+		private bandsService: BandsService,
+		private metadataService: MetadataService
 	) {}
 
   	ngOnInit(){
@@ -45,13 +31,16 @@ export class BandsComponent {
 		this.band= this.bandsService.getByUrl(this.url);
 		console.log(this.band);
 		this.id = this.band[0].urlYoutube;
+		this.metadataService.setTitle(this.band[0].titleMeta);
+   		this.metadataService.setTag('keywords', this.band[0].keywordsMeta);
+   		this.metadataService.setTag('description', this.band[0].descriptionMeta);
 		});
 	}
 
  
     savePlayer (player) {
     	this.player = player;
-    	console.log('player instance', player)
+    	//console.log('player instance', player)
     }
 
   	onStateChange(event){
