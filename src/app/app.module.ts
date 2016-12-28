@@ -7,7 +7,8 @@ import { MetadataModule, MetadataLoader, MetadataStaticLoader, PageTitlePosition
 import { AppComponent }  from './app.component';
 import { BandsComponent }  from './components/bands.component';
 import { UnderConstruccionComponent }  from './components/under-construccion.component';
-import { YoutubePlayerModule } from 'ng2-youtube-player';
+import { SelectBandComponent }  from './components/select-band.component';
+import { SafePipe} from './pipes/safe.pipe';
 
 export function metadataFactory() {
   return new MetadataStaticLoader({
@@ -23,12 +24,12 @@ export function metadataFactory() {
 }
  
 @NgModule({
-  imports:      [ BrowserModule, routing, YoutubePlayerModule, MetadataModule.forRoot({
+  imports:      [ BrowserModule, routing, MetadataModule.forRoot({
       provide: MetadataLoader,
       useFactory: (metadataFactory)
     })
  ],
-  declarations: [ AppComponent, BandsComponent, UnderConstruccionComponent  ],
+  declarations: [ AppComponent, BandsComponent, UnderConstruccionComponent, SelectBandComponent, SafePipe ],
   providers:    [ appRoutingProviders ],
   bootstrap:    [ AppComponent ]
 })

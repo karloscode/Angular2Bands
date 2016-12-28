@@ -1,9 +1,9 @@
-import { Component , Input } from '@angular/core';
+import { Component , Input , OnInit} from '@angular/core';
 import { Band } from '../models/band';
 import { BandsService } from '../services/bands.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MetadataService } from 'ng2-metadata';
-
+import { SafePipe} from '../pipes/safe.pipe';
 
 @Component({
 	selector: 'bands',	
@@ -11,11 +11,10 @@ import { MetadataService } from 'ng2-metadata';
   providers: [BandsService] 
 })
 
-export class BandsComponent {
+export class BandsComponent implements OnInit{
 	band: Band[];
-	private url: string;
-	private player ;
-  	private id: string;
+	public url: string;
+  	public id: string;
 
   	constructor(
 		private route: ActivatedRoute,
@@ -27,23 +26,14 @@ export class BandsComponent {
   	ngOnInit(){
 		this.route.params.forEach((params: Params) => {
 		this.url = params['url'];
-		console.log(this.url);
+		//console.log(this.url);
 		this.band= this.bandsService.getByUrl(this.url);
-		console.log(this.band);
+		//console.log(this.band);
 		this.id = this.band[0].urlYoutube;
 		this.metadataService.setTitle(this.band[0].titleMeta);
    		this.metadataService.setTag('keywords', this.band[0].keywordsMeta);
-   		this.metadataService.setTag('description', this.band[0].descriptionMeta);
+
 		});
 	}
 
- 
-    savePlayer (player) {
-    	this.player = player;
-    	//console.log('player instance', player)
-    }
-
-  	onStateChange(event){
-    	//console.log('player state', event.data);
-  	}
 }

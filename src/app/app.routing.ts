@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UnderConstruccionComponent }  from './components/under-construccion.component';
 import { BandsComponent }  from './components/bands.component';
+import { SelectBandComponent } from './components/select-band.component';
+
 
 const appRoutes: Routes = [
 	{
@@ -15,7 +17,13 @@ const appRoutes: Routes = [
         keywords: 'angular rocks default'
       }}
 	},
-	{ path: 'foo', component: UnderConstruccionComponent ,  data: {
+	{ path: '', component: SelectBandComponent ,  data: {
+      metadata: {
+        title: 'Angular Rocks',
+        description: 'Esto es la descripción por defecto',
+        keywords: 'angular rocks default'
+      }}},
+  {  path: 'foo', component: UnderConstruccionComponent ,  data: {
       metadata: {
         title: 'Angular Rocks',
         description: 'Esto es la descripción por defecto',
