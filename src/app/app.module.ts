@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
+import { CollapseDirective } from 'ng2-bootstrap';
 import { MetadataModule, MetadataLoader, MetadataStaticLoader, PageTitlePositioning } from 'ng2-metadata';
 
 
@@ -29,7 +30,7 @@ export function metadataFactory() {
       useFactory: (metadataFactory)
     })
  ],
-  declarations: [ AppComponent, BandsComponent, UnderConstruccionComponent, SelectBandComponent, SafePipe ],
+  declarations: [ AppComponent, BandsComponent, UnderConstruccionComponent, SelectBandComponent, SafePipe, CollapseDirective ],
   providers:    [ appRoutingProviders ],
   bootstrap:    [ AppComponent ]
 })
