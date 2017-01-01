@@ -2,7 +2,7 @@
 
   body { text-align: center; padding: 60px 0 0 0; }
   h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
+  body { font: 20px Helvetica, sans-serif; color: #333; margin: 20px}
   article { display: block; text-align: center; margin: 0 auto; }
 
 
@@ -13,6 +13,10 @@
   padding: 50px;
 }
 
+.centerImg {
+  display: block; 
+  margin: 0 auto;
+}
 /* Add red color to icons and set the font-size */
 .logo-small {
     color: red;
